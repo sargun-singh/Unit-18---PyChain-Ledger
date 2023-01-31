@@ -1,141 +1,103 @@
-# Unit-18---PyChain-Ledger
-Module 18 Challenge
+# PyChain Ledger
 
-Background
-You’re a fintech engineer who’s working at one of the five largest banks in the world. You were recently promoted to act as the lead developer on their decentralized finance team. Your task is to build a blockchain-based ledger system, complete with a user-friendly web interface. This ledger will allow partner banks to conduct financial transactions (that is, to transfer money between senders and receivers) and to verify the integrity of the data in the ledger.
+![alt=""](Images/application-image.png)
 
-What You're Creating
-You’ll make the following updates to the provided Python file for this Challenge, which already contains the basic PyChain ledger structure that you created throughout the module:
+You’re a fintech engineer who’s working at one of the five largest banks in the world. You were recently promoted to act as the lead developer on their decentralized finance team. Your task is to build a blockchain-based ledger system, complete with a user-friendly web interface. This ledger should allow partner banks to conduct financial transactions (that is, to transfer money between senders and receivers) and to verify the integrity of the data in the ledger.
 
-Create a new data class named Record. This class will serve as the template for the financial transaction records that the blocks of the ledger will store.
+You’ll make the following updates to the provided Python file for this assignment, which already contains the basic `PyChain` ledger structure that you created throughout the module:
 
-Change the existing Block data class by replacing the generic data attribute with a record attribute that’s of type Record.
+1. Create a new data class named `Record`. This class will serve as the blueprint for the financial transaction records that the blocks of the ledger will store.
 
-Create additional user input areas in the Streamlit application. These input areas will collect the relevant information for each financial record that you’ll store in the PyChain ledger.
+2. Modify the existing `Block` data class to store `Record` data.
 
-Test your completed PyChain ledger.
+3. Add Relevant User Inputs to the Streamlit interface.
 
-You’ll also update the README.md file in your GitHub repository to include an explanation of the Steamlit application, a screenshot or video of your deployed Streamlit application, and any other information that’s needed to interact with your project.
+4. Test the PyChain Ledger by Storing Records.
 
-Files
+---
+## Files
+
 Download the following files to help you get started:
 
-Module 18 Challenge files
+[Module 18 Homework files](Starter_Code/pychain.py)
 
-Instructions
-Open the provided pychain.py file, which you’ll use to complete the steps for this Challenge. Notice that the PyChain ledger that you built throughout this module already includes the functionality to create blocks, perform the proof of work consensus protocol, and validate blocks in the chain.
+---
 
-The steps for this Challenge are divided into the following sections:
+## Instructions
 
-Create a Record Data Class
+Open the [`pychain.py` file](Starter_Code/pychain.py) included in the Homework's `Starter_code` folder. You’ll use this file to complete the steps for this assignment. Notice that the `PyChain` ledger that you built throughout this unit already includes the functionality to create blocks, perform the proof of work consensus protocol, and validate blocks in the chain.
 
-Modify the Existing Block Data Class to Store Record Data
+The steps for this assignment are divided into the following sections:
 
-Add Relevant User Inputs to the Streamlit Interface
+1. Create a Record Data Class
 
-Test the PyChain Ledger by Storing Records
+2. Modify the Existing Block Data Class to Store Record Data
 
-Step 1: Create a Record Data Class
-Define a new Python data class named Record. Give this new class a formalized data structure that consists of the sender, receiver, and amount attributes. To do so, complete the following steps:
+3. Add Relevant User Inputs to the Streamlit Interface
 
-Define a new class named Record.
+4. Test the PyChain Ledger by Storing Records
 
-Add the @dataclass decorator immediately before the Record class definition.
+### Step 1: Create a Record Data Class
 
-Add an attribute named sender of type str.
+Define a new Python data class named `Record`. Give this new class a formalized data structure that consists of the `sender`, `receiver`, and `amount` attributes. To do so, complete the following steps:
 
-Add an attribute named receiver of type str.
+1. Define a new class named `Record`.
 
-Add an attribute named amount of type float.
+2. Add the `@dataclass` decorator immediately before the `Record` class definition.
 
-NOTE
-You’ll use this new Record class as the data type of your record attribute in the next section.
+3. Add an attribute named `sender` of type `str`.
 
-Step 2: Modify the Existing Block Data Class to Store Record Data
-Rename the data attribute in your Block class to record, and then set it to use an instance of the new Record class that you created in the previous section. To do so, complete the following steps:
+4. Add an attribute named `receiver` of type `str`.
 
-In the Block class, rename the data attribute to record.
+5. Add an attribute named `amount` of type `float`.
 
-Set the data type of the record attribute to Record.
+Note that you’ll use this new `Record` class as the data type of your `record` attribute in the next section.
 
-Step 3: Add Relevant User Inputs to the Streamlit Interface
-Code additional input areas for the user interface of your Streamlit application. Create these input areas to capture the sender, receiver, and amount for each transaction that you’ll store in the Block record. To do so, complete the following steps:
+### Step 2: Modify the Existing Block Data Class to Store Record Data
 
-Delete the input_data variable from the Streamlit interface.
+Rename the `data` attribute in your `Block` class to `record`, and then set it to use an instance of the new `Record` class that you created in the previous section. To do so, complete the following steps:
 
-Add an input area where you can get a value for sender from the user.
+1. In the `Block` class, rename the `data` attribute to `record`.
 
-Add an input area where you can get a value for receiver from the user.
+2. Set the data type of the `record` attribute to `Record`.
 
-Add an input area where you can get a value for amount from the user.
+### Step 3: Add Relevant User Inputs to the Streamlit Interface
 
-As part of the Add Block button functionality, update new_block so that Block consists of an attribute named record, which is set equal to a Record that contains the sender, receiver, and amount values. The updated Blockshould also include the attributes for creator_id and prev_hash.
+Code additional input areas for the user interface of your Streamlit application. Create these input areas to capture the sender, receiver, and amount for each transaction that you’ll store in the `Block` record. To do so, complete the following steps:
 
-Step 4: Test the PyChain Ledger by Storing Records
-Test your completed PyChain ledger and user interface by running your Streamlit application and storing some mined blocks in your PyChain ledger. Then test the blockchain validation process by using your PyChain ledger. To do so, complete the following steps:
+1. Delete the `input_data` variable from the Streamlit interface.
 
-In the terminal, navigate to the project folder where you've coded the Challenge.
+2. Add an input area where you can get a value for `sender` from the user.
 
-In the terminal, run the Streamlit application by using streamlit run pychain.py.
+3. Add an input area where you can get a value for `receiver` from the user.
 
-Enter values for the sender, receiver, and amount, and then click the Add Block button. Do this several times to store several blocks in the ledger.
+4. Add an input area where you can get a value for `amount` from the user.
 
-Verify the block contents and hashes in the Streamlit drop-down menu. Take a screenshot of the Streamlit application page, which should detail a blockchain that consists of multiple blocks. Include the screenshot in the README.md file for your Challenge repository.
+5. As part of the “Add Block” button functionality, update `new_block` so that `Block` consists of an attribute named `record`, which is set equal to a `Record` that contains the `sender`, `receiver`, and `amount` values. The updated `Block` should also include the attributes for `creator_id` and `prev_hash`.
 
-Test the blockchain validation process by using the web interface. Take a screenshot of the Streamlit application page, which should indicate the validity of the blockchain. Include the screenshot in the README.md file for your Challenge repository.
+### Step 4: Test the PyChain Ledger by Storing Records
 
-Requirements
-Step 1: Create a Record Data Class (20 points)
-To receive all points, you must:
+Test your complete `PyChain` ledger and user interface by running your Streamlit application and storing some mined blocks in your `PyChain` ledger. Then test the blockchain validation process by using your `PyChain` ledger. To do so, complete the following steps:
 
-Successfully define a new class named Record. (10 points)
+1. In the terminal, navigate to the project folder where you've coded this assignment.
 
-Implement the required class attributes for the Record class. (10 points)
+2. In the terminal, run the Streamlit application by using `streamlit run pychain.py`.
 
-Step 2: Modify the Existing Block Data Class to Store Record Data (20 points)
-To receive all points, you must:
+3. Enter values for the sender, receiver, and amount, and then click the Add Block button. Do this several times to store several blocks in the ledger.
 
-Rename the data attribute in the Block class to record. (10 points)
+4. Verify the block contents and hashes in the Streamlit dropdown menu. Take a screenshot of the Streamlit application page, which should detail a blockchain that consists of multiple blocks. Include the screenshot in the `README.md` file for your GitHub repository.
 
-Set the data type of the record attribute to Record. (10 points)
+5. Test the blockchain validation process by using the web interface. Take a screenshot of the Streamlit application page, which should indicate the validity of the blockchain. Include the screenshot in the `README.md` file for your homework repository.
 
-Step 3: Add Relevant User Inputs to the Streamlit Interface (20 points)
-To receive all points, you must:
+---
+## Submission
 
-Add the correct user inputs for getting the sender, receiver, and amount. (10 points)
+You’ll upload the Python file for this assignment to your GitHub repository.
 
-Correctly update the Add Block button functionality. (10 points)
+* Make sure to update the `README.md` file to include an explanation of the Steamlit application, a screenshot or video of your deployed Streamlit application, and any other information that’s needed to interact with your project.
 
-Step 4: Test the PyChain Ledger by Storing Records (10 points)
-To receive all points, you must:
+* Submit the link to your GitHub project to Bootcamp Spot.
 
-Test the functionality of your chain. In the README.md file for your GitHub repository, include a screenshot that contains a blockchain consisting of several blocks. (5 points)
+---
 
-Confirm that your blockchain is valid. In the README.md file of your GitHub repository, include a screenshot of the Streamlit application page displaying “Blockchain is Valid.” (5 points)
-
-Coding Conventions and Formatting (10 points)
-To receive all points, your code must:
-
-Place imports at the top of the file, just after any module comments and docstrings, and before module globals and constants. (3 points)
-
-Name functions and variables with lowercase characters, with words separated by underscores. (2 points)
-
-Follow DRY (Don't Repeat Yourself) principles, creating maintainable and reusable code. (3 points)
-
-Use concise logic and creative engineering where possible. (2 points)
-
-Deployment and Submission (10 points)
-To receive all points, you must:
-
-Submit a link to a GitHub repository that’s cloned to your local machine and that contains your files. (4 points)
-
-Use the command line to add your files to the repository. (3 points)
-
-Include appropriate commit messages for your files. (3 points)
-
-Comments (10 points)
-To receive all points, your code must:
-
-Be well commented with concise, relevant notes that other developers can understand. (10 points)
-Submission
-To submit your Challenge assignment, click Submit, and then provide the URL of your GitHub repository for grading.
+© 2021 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
